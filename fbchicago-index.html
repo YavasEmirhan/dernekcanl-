@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicago Fenerbahçeliler Derneği</title>
+<meta name="description" content="Chicago Fenerbahçeliler Derneği: 2008'den beri Chicago ve çevresindeki Fenerbahçelilerin çatısı. Üyelik başvurusu, üye network'ü, etkinlikler ve iletişim.">
+<meta property="og:title" content="Chicago Fenerbahçeliler Derneği">
+<meta property="og:description" content="2008'den beri Chicago ve çevresindeki Fenerbahçelilerin çatısı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#071B4A;--navy-2:#12318A;--yellow:#FFD60A;--paper:#F5F4EF;--ink:#16213F;--mute:#5A6482;--line:#DEDBD0;--body:"Archivo",Arial,Helvetica,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:28px;padding-right:28px}
+:focus-visible{outline:3px solid var(--navy-2);outline-offset:3px}
+.display{font-weight:600;letter-spacing:-.02em;line-height:1.12;color:var(--navy)}
+
+.btn{display:inline-block;font-weight:600;font-size:16px;text-decoration:none;padding:13px 22px;border:1.5px solid var(--navy);border-radius:4px;transition:background .15s,color .15s}
+.btn-yellow,.btn-navy{background:var(--navy);color:#fff}
+.btn-yellow:hover,.btn-navy:hover{background:var(--navy-2);border-color:var(--navy-2)}
+.btn-line{color:var(--navy);background:transparent}
+.btn-line:hover{background:var(--navy);color:#fff}
+
+.site-head{position:sticky;top:0;z-index:30;background:var(--paper);border-top:5px solid var(--yellow);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark{width:22px;height:28px;flex:none;background:repeating-linear-gradient(90deg,var(--yellow) 0 20%,var(--navy) 20% 40%);border-radius:2px}
+.brand-name{font-weight:700;font-size:16px;line-height:1.2;color:var(--navy)}
+.brand-sub{display:block;font-weight:400;font-size:12px;color:var(--mute)}
+.nav ul{display:flex;align-items:center;gap:2px;list-style:none}
+.nav a{display:block;padding:9px 12px;font-size:15px;font-weight:500;text-decoration:none;color:var(--ink)}
+.nav a:hover{color:var(--navy-2)}
+.nav .join{background:var(--navy);color:#fff;margin-left:10px;padding:9px 16px;border-radius:4px;font-weight:600}
+.nav .join:hover{background:var(--navy-2);color:#fff}
+.nav .panel{margin-left:8px;padding:7.5px 15px;border:1.5px solid var(--navy);border-radius:4px;font-weight:600;color:var(--navy)}
+.nav .panel:hover{background:var(--navy);color:#fff}
+.menu-btn{display:none;background:none;border:1.5px solid var(--navy);border-radius:4px;color:var(--navy);font:600 14px var(--body);padding:8px 13px;cursor:pointer}
+
+.hero{padding:96px 0 88px}
+.hero-copy{max-width:760px}
+.hero h1{font-size:clamp(36px,5.4vw,58px);margin-bottom:22px}
+.hero h1 span{display:inline}
+.hero p{font-size:19px;color:var(--ink);max-width:36em}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.flama-col{display:none}
+
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.band .wrap{display:flex;flex-wrap:wrap;gap:6px 40px;padding-top:16px;padding-bottom:16px;font-size:15px;color:var(--mute)}
+.band strong{color:var(--navy);font-weight:600}
+
+.sec{padding:88px 0}
+.sec-white,.sec-navy{background:#fff}
+.h2{font-size:clamp(28px,3.4vw,36px);margin-bottom:14px}
+.h2::before{content:"";display:block;width:36px;height:4px;background:var(--yellow);margin-bottom:18px}
+.intro{font-size:18px;max-width:38em}
+
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:8px}
+.about-grid p+p{margin-top:16px}
+.pull{display:none}
+.does{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
+.does li{padding:14px 0;border-bottom:1px solid var(--line)}
+.does b{display:block;font-weight:600;color:var(--navy)}
+.does span{color:var(--mute);font-size:16px}
+
+.tl{margin-top:40px;border-top:1px solid var(--line)}
+.tl article{display:grid;grid-template-columns:170px minmax(0,1fr);gap:8px 32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.tl time{font-weight:600;font-size:16px;color:var(--navy)}
+.tl time small{display:block;font-weight:400;font-size:14.5px;color:var(--mute)}
+.tl h3{font-size:19px;line-height:1.3;font-weight:600;color:var(--navy);margin-bottom:6px}
+.tl p{max-width:40em;font-size:16.5px}
+.tl .src{grid-column:2;font-size:14.5px;font-weight:600;color:var(--navy-2);text-underline-offset:4px}
+
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.board div{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px}
+.board b{display:block;font-weight:600;font-size:18px;color:var(--navy)}
+.board span{display:block;margin-top:2px;color:var(--mute);font-size:15px}
+.honor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin-top:44px}
+.honor h3{font-size:16px;font-weight:600;color:var(--navy);padding-bottom:10px;border-bottom:1px solid var(--line)}
+.honor ul{list-style:none}
+.honor li{padding:12px 0;border-bottom:1px solid var(--line);font-size:16.5px}
+.honor li span{display:block;color:var(--mute);font-size:15px}
+
+.join-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:32px;display:flex;flex-direction:column}
+.card h3{font-weight:600;font-size:24px;color:var(--navy);margin-bottom:8px}
+.fees{display:flex;gap:36px;margin:20px 0 0}
+.fees b{display:block;font-weight:600;font-size:28px;line-height:1.2;color:var(--navy)}
+.fees span{font-size:14.5px;color:var(--mute)}
+.steps{list-style:none;counter-reset:s;margin:20px 0 28px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:8px;padding:11px 0;border-top:1px solid var(--line);font-size:16px}
+.steps li::before{content:counter(s) ".";font-weight:600;color:var(--navy)}
+.card .btn{align-self:flex-start;margin-top:auto}
+.card .where{font-size:13.5px;margin-top:12px;color:var(--mute)}
+.thanks{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:15.5px}
+.thanks b{color:var(--navy);font-weight:600;margin-right:10px}
+
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:32px}
+.addr{font-style:normal;font-weight:600;font-size:22px;line-height:1.35;color:var(--navy)}
+.addr small{display:block;font-weight:400;font-size:16.5px;line-height:1.6;color:var(--mute);margin-top:6px}
+.addr a{color:var(--navy-2);font-weight:600}
+.ways{list-style:none;border-top:1px solid var(--line)}
+.ways li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ways span{font-size:14.5px;color:var(--mute)}
+.ways a{font-size:17px;font-weight:600;color:var(--navy);text-underline-offset:4px;overflow-wrap:anywhere}
+
+.foot{background:var(--navy);color:#B7C1DE;font-size:14.5px}
+.stripes{display:none}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:40px;padding-top:48px;padding-bottom:48px}
+.foot b{display:block;color:#fff;font-size:15px;font-weight:600;margin-bottom:8px}
+.foot ul{list-style:none}
+.foot li{padding:3px 0}
+.foot a{color:#E4E9F6;text-decoration:none}
+.foot a:hover{color:var(--yellow)}
+.foot :focus-visible{outline-color:var(--yellow)}
+.foot .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:13.5px}
+
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;align-items:stretch;padding:6px 28px 20px}
+  .nav a{padding:13px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  .nav .join{margin:16px 0 0;text-align:center;padding:13px;border-bottom:0}
+  .nav .panel{margin:10px 0 0;text-align:center;padding:11.5px;border:1.5px solid var(--navy)}
+  .hero{padding:60px 0 56px}
+  .sec{padding:60px 0}
+  .about-grid,.contact-grid,.join-grid,.honor{grid-template-columns:1fr;gap:32px}
+  .join-grid{gap:18px}
+  .board{grid-template-columns:1fr;gap:12px}
+  .tl article{grid-template-columns:1fr}
+  .tl .src{grid-column:1}
+  .foot .wrap{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding-left:20px;padding-right:20px}
+  .brand-sub{display:none}
+  .card{padding:24px}
+  .ways li{grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="#ust" aria-label="Chicago Fenerbahçeliler Derneği ana sayfa">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brand-name">Chicago Fenerbahçeliler Derneği<span class="brand-sub">Chicago Fenerbahce Supporter Club, NFP</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menü</button>
+    <nav class="nav" id="menu" aria-label="Ana menü">
+      <ul>
+        <li><a href="#dernek">Dernek</a></li>
+        <li><a href="#yil">2026'da biz</a></li>
+        <li><a href="#yonetim">Yönetim</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+        <li><a class="join" href="https://uyelik.fbchicago.org">Üyelik</a></li>
+        <li><a class="panel" href="https://network.fbchicago.org">Network</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="ust">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="display">Michigan Gölü kıyısında bir parça Kadıköy.</h1>
+        <p>Chicago Fenerbahçeliler Derneği, 2008'den beri Chicago ve çevre eyaletlerdeki Fenerbahçelileri özel günlerde, sofralarda ve iş hayatında bir araya getiriyor. Evimiz her Fenerbahçeliye açık.</p>
+        <div class="actions">
+          <a class="btn btn-yellow" href="https://uyelik.fbchicago.org">Derneğe üye ol</a>
+          <a class="btn btn-line" href="#dernek">Derneği tanı</a>
+        </div>
+      </div>
+      <div class="flama-col" aria-hidden="true">
+        <div class="flama">
+          <div class="flama-plate"><b>Chicago</b><i>2008'den beri</i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap">
+      <span><strong>Fenerbahçe Spor Kulübü</strong> tarafından akredite taraftar derneği</span>
+      <span>Illinois'te kayıtlı, kâr amacı gütmeyen kuruluş (NFP)</span>
+    </div>
+  </div>
+
+  <section class="sec on-light" id="dernek">
+    <div class="wrap">
+      <h2 class="display h2">Aynı sevdanın çatısı</h2>
+      <div class="about-grid">
+        <div>
+          <p class="intro">Derneğimiz 2008'de, Chicago'da yaşayan Fenerbahçeliler bir çatı altında buluşsun diye Kurucu Başkanımız Atilla Zindancıoğlu'nun öncülüğünde kuruldu.</p>
+          <p class="pull">Chicago'da yaşıyoruz. Kalbimiz Kadıköy'de atıyor.</p>
+        </div>
+        <div>
+          <p>O günden bugüne Chicago'daki ve Midwest'teki sarı lacivertli topluluğun buluşma noktasıyız. Kulübümüzün değerlendirme sürecini tamamlayarak Fenerbahçe Spor Kulübü'nün resmî akreditasyonunu aldık.</p>
+          <p>Dernek merkezimiz Chicago'nun West Loop bölgesinde. Üyelerimizle yıl boyunca burada ve şehrin farklı noktalarında bir araya geliyoruz.</p>
+          <ul class="does">
+            <li><b>Özel günler</b><span>3 Mayıs ve 19.07 Dünya Fenerbahçeliler Günü'nü her yıl birlikte kutluyoruz.</span></li>
+            <li><b>Dayanışma</b><span>İftar sofraları ve davetlerle Chicago'daki Türk toplumunu bir araya getiriyoruz.</span></li>
+            <li><b>Üye network'ü</b><span>Üyelerimiz mesleklerini ve ihtiyaçlarını paylaşıyor, birbirine iş ve bağlantı kapısı açıyor.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-white on-light" id="yil">
+    <div class="wrap">
+      <h2 class="display h2">2026'da biz</h2>
+      <p class="intro">Fenerbahçe'nin 120. yılına giderken bu yıl neler yaptığımızın kısa özeti.</p>
+      <div class="tl">
+        <article>
+          <time datetime="2026-07">Temmuz<small>Niles, Illinois</small></time>
+          <div>
+            <h3>19.07 Dünya Fenerbahçeliler Günü Balosu</h3>
+            <p>Midwest'te yaşayan Fenerbahçelileri ve Türk toplumunu aynı salonda buluşturduk. Kulüp Başkanımızın geceye özel gönderdiği mektup okundu, yıl dönümü pastası marşlarla kesildi. Gecenin ana sponsoru Agora Truck &amp; Trailer Parts oldu.</p>
+          </div>
+          <a class="src" href="https://www.fenerbahce.org/haberler/dernekler/2026/7/chicago-da-dunya-fenerbahceliler-gunu-coskusu-yasandi">fenerbahce.org'da oku</a>
+        </article>
+        <article>
+          <time datetime="2026-05">Mayıs<small>Florida</small></time>
+          <div>
+            <h3>Ersun Yanal ile buluşma</h3>
+            <p>Üyelerimiz, teknik direktör Ersun Yanal ile Florida'da bir araya geldi. Fenerbahçe anıları ve futbolun bilimsel yönü üzerine uzun bir sohbet oldu.</p>
+          </div>
+          <a class="src" href="https://www.amerikaliturk.com/haber/ersun-yanal-chicago-fenerbahceliler-dernegi-uyeleriyle-floridada-bir-araya-geldi-mpnf6yf4">Haberi oku</a>
+        </article>
+        <article>
+          <time datetime="2026-05-03">3 Mayıs<small>Dernek merkezi, Chicago</small></time>
+          <div>
+            <h3>3 Mayıs daveti ve üyelik lansmanı</h3>
+            <p>Atatürk'ün kulübümüzü ziyaretinin yıl dönümünü 100'ü aşkın Fenerbahçeli ile dernek merkezimizde kutladık. T.C. Chicago Başkonsolosu Tahir Bora Atatanır'a onur üyeliği takdim edildi, yeni üyelik sistemimizi de bu davette tanıttık.</p>
+          </div>
+          <a class="src" href="https://www.fenerbahce.org/haberler/dernekler/2026/5/chicago-fenerbahceliler-dernegimizden-3-mayis-a-ozel-anlamli-organizasyon">fenerbahce.org'da oku</a>
+        </article>
+        <article>
+          <time datetime="2026-03">Mart<small>Chicago</small></time>
+          <div>
+            <h3>Dayanışma iftarı</h3>
+            <p>Ramazan sofrasını Chicago ve çevresindeki Fenerbahçelilerle paylaştık. Fenerbahçe'nin ve A Millî Takım'ın unutulmaz ismi Bobby Dixon aramızdaydı, kendisine plaket ve fahri üyelik verdik.</p>
+          </div>
+          <a class="src" href="https://www.fenerbahce.org/haberler/dernekler/2026/3/chicago-fenerbahceliler-dernegi-nden-dayanisma-iftari">fenerbahce.org'da oku</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec on-light" id="yonetim">
+    <div class="wrap">
+      <h2 class="display h2">Yönetim</h2>
+      <p class="intro">Derneğimiz, üyelerin seçtiği yönetim kurulu tarafından gönüllülük esasıyla yönetilir.</p>
+      <div class="board">
+        <div><b>Halis Ertaş</b><span>Başkan</span></div>
+        <div><b>Yiğit Yavuz</b><span>Başkanvekili</span></div>
+        <div><b>Muharrem Matt Özkaynar</b><span>Yönetim Kurulu Üyesi</span></div>
+      </div>
+      <div class="honor">
+        <div>
+          <h3>Bizi bugüne taşıyanlar</h3>
+          <ul>
+            <li>Atilla Zindancıoğlu <span>Kurucu Başkan</span></li>
+            <li>Kemal Özer <span>Önceki dönem Başkanı</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Onur üyelerimiz</h3>
+          <ul>
+            <li>Tahir Bora Atatanır <span>T.C. Chicago Başkonsolosu</span></li>
+            <li>Bobby Dixon <span>Fenerbahçe ve A Millî Takım eski basketbolcusu</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-navy" id="katil">
+    <div class="wrap">
+      <h2 class="display h2">Aileye katıl, ağını büyüt</h2>
+      <p class="intro">Üyelik başvurusu ve üye network'ü kendi panellerinde çalışır. İkisine de buradan geçebilirsin.</p>
+      <div class="join-grid on-light">
+        <div class="card">
+          <h3>Üyelik</h3>
+          <p>Etkinliklerimize ve sarı lacivert topluluğumuza katılmak için başvurunu çevrim içi yap.</p>
+          <div class="fees">
+            <div><b>$100</b><span>Adult, 2026 katkı payı</span></div>
+            <div><b>$50</b><span>Öğrenci, 2026 katkı payı</span></div>
+          </div>
+          <ol class="steps">
+            <li>Başvuru formunu doldur.</li>
+            <li>Katkı payını 7 gün içinde Zelle ile gönder.</li>
+            <li>Başvurun yönetim kurulunda değerlendirilir, sonucu sana bildirilir.</li>
+          </ol>
+          <a class="btn btn-navy" href="https://uyelik.fbchicago.org">Başvuru formuna git</a>
+          <p class="where">uyelik.fbchicago.org adresinde açılır</p>
+        </div>
+        <div class="card">
+          <h3>Network</h3>
+          <p>Üyelerin deneyimini, şirketini ve ihtiyacını paylaştığı iş ağı. İş arayan, eleman arayan ve hizmet arayan üyeler burada buluşur.</p>
+          <ol class="steps">
+            <li>Profilini oluştur.</li>
+            <li>Ne aradığını belirt: iş, iş ortağı ya da hizmet.</li>
+            <li>Doğru bağlantıyı bul, iş ilanlarına göz at.</li>
+          </ol>
+          <a class="btn btn-line" href="https://network.fbchicago.org">Network'e git</a>
+          <p class="where">network.fbchicago.org adresinde açılır. Bilgilerin yalnızca seçtiğin görünürlükle paylaşılır.</p>
+        </div>
+      </div>
+      <p class="thanks"><b>Teşekkürler</b><span>19.07 Balosu ana sponsoru Agora Truck &amp; Trailer Parts'a ve derneğimize destek veren tüm üyelerimize.</span></p>
+    </div>
+  </section>
+
+  <section class="sec sec-white on-light" id="iletisim">
+    <div class="wrap">
+      <h2 class="display h2">Bize ulaş</h2>
+      <div class="contact-grid">
+        <address class="addr">316 N. Loomis St
+          <small>Chicago, IL 60607<br>Dernek merkezi, West Loop<br><a href="https://www.google.com/maps/search/?api=1&query=316+N+Loomis+St+Chicago+IL+60607">Haritada aç</a></small>
+        </address>
+        <ul class="ways">
+          <li><span>E-posta</span><a href="mailto:info@fbchicago.org">info@fbchicago.org</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/13122965932">+1 (312) 296-5932</a></li>
+          <li><span>X</span><a href="https://x.com/FBChicago">@FBChicago</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="stripes" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <b>Chicago Fenerbahçeliler Derneği</b>
+      Chicago Fenerbahce Supporter Club, NFP<br>
+      316 N. Loomis St, Chicago, IL 60607
+    </div>
+    <div>
+      <b>Site</b>
+      <ul>
+        <li><a href="#dernek">Dernek</a></li>
+        <li><a href="#yil">2026'da biz</a></li>
+        <li><a href="#yonetim">Yönetim</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>Paneller</b>
+      <ul>
+        <li><a href="https://uyelik.fbchicago.org">Üyelik başvurusu</a></li>
+        <li><a href="https://network.fbchicago.org">Üye network'ü</a></li>
+        <li><a href="https://www.fenerbahce.org">fenerbahce.org</a></li>
+      </ul>
+    </div>
+    <p class="legal">Chicago Fenerbahçeliler Derneği, Fenerbahçe Spor Kulübü tarafından akredite edilmiş bağımsız bir taraftar derneğidir. Fenerbahçe adı ve arması Fenerbahçe Spor Kulübü'ne aittir.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('menuBtn'),m=document.getElementById('menu');
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'Kapat':'Menü'}
+  b.addEventListener('click',function(){set(!m.classList.contains('open'))});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+</body>
+</html>
